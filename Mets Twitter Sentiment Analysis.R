@@ -10,16 +10,16 @@ library(lubridate)
 library(data.table)
 
 # whatever name you assigned to your created app
-appname <- "TheRandomWalk"
+appname <- "######"
 
 ## api key (example below is not a real key)
-key <- "BrYQunR9PkdZPBfA0PFKZ2Zy1"
+key <- "######"
 
 ## api secret (example below is not a real key)
-secret <- "guf51XpHECHhQ3xf2pfzrDJWSy1NM7L8s4BtQZA9Ycdym2CAwd"
+secret <- "##########"
 
-access_token = '37229949-8FD6YxfXz1ta9YsiIZj3cCQ6g7pvce9SkOguw5sL6'
-access_secret = 'c1SFqhUivXPUiaQSWQTuBrTuhlcRoNbKm8CWFReNG3o0m'
+access_token = '####-#'
+access_secret = '#########'
 
 # create token named "twitter_token"
 twitter_token <- create_token(
@@ -92,8 +92,8 @@ names = c('Brodie Van Wagenen',  'Jared Porter', 'Luis Rojas', 'Carlos Beltran',
           'Jeff Wilpon', 'Fred Wilpon', 'Steve Cohen',  'Sandy Alderson', 'Wilpons', 'Cohens',
           'Alex Rodriguez', 'Jennifer Lopez', 'J-Lo', "A-Rod", "J-Rod",
           'George Springer', 'Trevor Bauer', 'JT Realmuto', 'DJ Lemahieu', 'Francisco Lindor', 'Nolan Arenado', 'James Mccann', 'Trevor May',
-          'Jeff Mcneil', 'Brandon Nimmo', 'Michael Conforto', 'Mike Conforto', 'Pete Alonso', 'Dom Smith', 'Dominic Smith', 'Robinson Cano', 'canó',
-          'andrés giménez', 'JD Davis', 'Jacob Degrom', 'Noah Syndergaard', 'Marcus Stroman', 'David Peterson', 'Edwin Diaz', 'Steven Matz',
+          'Jeff Mcneil', 'Brandon Nimmo', 'Michael Conforto', 'Mike Conforto', 'Pete Alonso', 'Dom Smith', 'Dominic Smith', 'Robinson Cano', 'canÃ³',
+          'andrÃ©s gimÃ©nez', 'JD Davis', 'Jacob Degrom', 'Noah Syndergaard', 'Marcus Stroman', 'David Peterson', 'Edwin Diaz', 'Steven Matz',
           'Seth Lugo', 'Rick Porcello', 'Robert Gsellman', 'Michael Wacha', 'Yoenis Cespedes', 'Todd Frazier',  'Luis Guillorme', 'Amed Rosario', 
           'Wilson Ramos', 'Dellin Betances', 'Jeurys Familia', 'Billy Hamilton', 'Brad Brach', 'Franklyn Kilome', 'Drew Smith', 'Zach Wheeler', 'Jed Lowrie')
 
@@ -141,8 +141,8 @@ mets_words =
          word%in% c('michael conforto', 'mike conforto', 'michael', 'conforto') ~ 'mconforto',
          word%in% c('pete alonso', 'pete', 'alonso') ~ 'palonso',
          word%in% c('dom smith', 'dom', 'dominic', 'dominic smith', 'smith') ~ 'dsmith',
-         word%in% c('robinson cano', 'robinson', 'cano', 'canó') ~ 'rcano',
-         word%in% c('andrés giménez', 'andrés', 'giménez') ~ 'agiménez',
+         word%in% c('robinson cano', 'robinson', 'cano', 'canÃ³') ~ 'rcano',
+         word%in% c('andrÃ©s gimÃ©nez', 'andrÃ©s', 'gimÃ©nez') ~ 'agimÃ©nez',
          word%in% c('jd davis', 'jd', 'davis') ~ 'jdavis',
          word%in% c('jacob degrom', 'jacob', 'degrom') ~ 'jdegrom',
          word%in% c('noah syndergaard', 'noah', 'syndergaard') ~ 'nsyndergaard',
@@ -154,7 +154,7 @@ mets_words =
          word%in% c('rick porcello', 'rick', 'porcello') ~ 'rporcello',
          word%in% c('robert gsellman', 'robert', 'gsellman') ~ 'rgsellman',
          word%in% c('michael wacha', 'wacha') ~ 'mwacha',
-         word%in% c('yoenis cespedes', 'yoenis', 'cespedes', 'céspedes') ~ 'ycespedes',
+         word%in% c('yoenis cespedes', 'yoenis', 'cespedes', 'cÃ©spedes') ~ 'ycespedes',
          word%in% c('todd frazier', 'todd', 'frazier') ~ 'tfrazier',
          word%in% c('luis guillorme', 'luis', 'guillorme') ~ 'lguillorme',
          word%in% c('amed rosario', 'amed', 'rosario') ~ 'arosario',
@@ -290,4 +290,4 @@ select(word2, favorite_count, retweet_count) %>%
 
 dummy.words = unique(mets_words %>% filter(is.name == 'name') %>% select(word = word3)) %>%
    bind_rows(mets_words_nonames %>% slice(2:301) %>% select(word)) %>%
-   filter(word != 'céspedes', word!= 'nym')
+   filter(word != 'cÃ©spedes', word!= 'nym')
